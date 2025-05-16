@@ -190,21 +190,26 @@ in
 ```
 pharma-sales-dashboard/
 │
-├── PharmaDashboard.pbix
+├── Pharma_Sales_Dashboard.pbix
 ├── README.md
-├── /data
-│   └── sales_data.csv
+├── /raw data
+│   └── saleshourly.csv
 ├── /screenshots
-│   ├── pie_chart_yearly_sales.png
-│   ├── stacked_area_monthly_sales.png
-│   ├── line_chart_hourly_sales.png
-│   └── heatmap_day_hour.png
+│   ├── Pharma_Sales_Dashboard.jpeg
+│   ├── heatmap_day_hour.jpeg
+│   ├── line_chart_hourly_sales.jpeg
+│   └── pie_chart_yearly_sales.jpeg
+|   └── stacked_area_monthly_sales.jpeg
 ```
 
 ---
 
 ## 📬 Contact
 
-For questions or feedback, please contact **[Your Name]** at **[your.email@example.com]**
+For questions or feedback, please contact 
+
+**[Abhishek Prasanna Walavalkar]** at **[abhishek.walavalkar13@gmail.com]**  [Linkedin](https://www.linkedin.com/in/abhishek-walavalkar-777130147/)
+
+**[Gandhar Ravindra Pansare]** at **[gandharpansare@gmail.com]**  [Linkedin](https://www.linkedin.com/in/gandharpansare/)
 
 ---
