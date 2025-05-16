@@ -2,9 +2,12 @@
 
 This Power BI dashboard was built using pharma sales data to uncover key sales insights and performance metrics across different time dimensions and drug types. The goal of this project was to provide a user-friendly and interactive analytics experience for understanding trends in pharmaceutical sales.
 
+Six years data (2014-2019) on sales of drugs classified in 8 ATC categories
 ---
 
 ## 📊 Dashboard Overview
+
+ ![Screenshot: Dashboard](./screenshots/Pharma_Sales_Dashboard.jpeg)
 
 The dashboard includes the following key performance indicators (KPIs) and visualizations:
 
@@ -18,27 +21,30 @@ The dashboard includes the following key performance indicators (KPIs) and visua
 - **Weekend to Weekday Sales Ratio**
 - **Lowest Sales Day of the Week**
 
-🧮 *[DAX and Power Query formulas for each KPI are included in a separate section below]*
+---
 
+## ⚙️ Functionalities
+
+We have added interactions, year slicers, and a reset button built using the bookmark feature of Power BI.
 ---
 
 ## 📈 Visualizations
 
 1. **Pie Chart** – Top Sales by Year  
-   > ![Screenshot: Pie Chart](./screenshots/pie_chart_yearly_sales.png)
+   > ![Screenshot: Pie Chart](./screenshots/pie_chart_yearly_sales.jpeg)
 
 2. **Stacked Area Chart** – Top Sales by Month and Drug Type  
-   > ![Screenshot: Stacked Area Chart](./screenshots/stacked_area_monthly_sales.png)
+   > ![Screenshot: Stacked Area Chart](./screenshots/stacked_area_monthly_sales.jpeg)
 
 3. **Line Chart** – Hourly Sales by Drug Type  
-   > ![Screenshot: Line Chart](./screenshots/line_chart_hourly_sales.png)
+   > ![Screenshot: Line Chart](./screenshots/line_chart_hourly_sales.jpeg)
 
 4. **Heatmap** – Day vs Hourly Sales Pattern  
-   > ![Screenshot: Heatmap](./screenshots/heatmap_day_hour.png)
+   > ![Screenshot: Heatmap](./screenshots/heatmap_day_hour.jpeg)
 
 ---
 
-## 🧮 KPI DAX & Power Query Formulas
+## 🧮 KPI DAX Formulas
 
 ### 1. **Highest Selling Drug**
 ```dax
@@ -160,6 +166,22 @@ CALCULATE(
 ## 🧩 Power Query (M Code)
 
 > *(Add any Power Query logic here for transformations, date extraction, type conversions, and calculated columns like "IsWeekend" or "Hour")*
+
+```
+let
+    Source = Csv.Document(File.Contents("D:\Abhishek\my workdesk\projects\Dashboards\Pharma sales\data\saleshourly.csv"),[Delimiter=",", Columns=13, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    #"Added Custom" = Table.AddColumn(#"Promoted Headers", "datetime", each DateTime.FromText([datum], "en-US")),
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom",{"datum"}),
+    #"Inserted Date" = Table.AddColumn(#"Removed Columns", "Date", each DateTime.Date([datetime]), type date),
+    #"Inserted Day" = Table.AddColumn(#"Inserted Date", "Day", each Date.Day([datetime]), Int64.Type),
+    #"Inserted Week of Year" = Table.AddColumn(#"Inserted Day", "Week of Year", each Date.WeekOfYear([datetime]), Int64.Type),
+    #"Inserted Quarter" = Table.AddColumn(#"Inserted Week of Year", "Quarter", each Date.QuarterOfYear([datetime]), Int64.Type),
+    #"Unpivoted Columns" = Table.UnpivotOtherColumns(#"Inserted Quarter", {"Year", "Month", "Hour", "Weekday Name", "datetime", "Date", "Day", "Week of Year", "Quarter"}, "Attribute", "Value"),
+    #"Renamed Columns" = Table.RenameColumns(#"Unpivoted Columns",{{"Attribute", "Drug Type"}})
+in
+    #"Renamed Columns"
+```
 
 ---
 
