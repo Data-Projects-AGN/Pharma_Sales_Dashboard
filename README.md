@@ -67,8 +67,8 @@ pharma-sales-dashboard/
 
 For questions or feedback, please contact 
 
-[**Abhishek Prasanna Walavalkar**](abhishek.walavalkar13@gmail.com)  [**(Linkedin)**](https://www.linkedin.com/in/abhishek-walavalkar-777130147/)
+**Abhishek Prasanna Walavalkar** (abhishek.walavalkar13@gmail.com)  [**(Linkedin)**](https://www.linkedin.com/in/abhishek-walavalkar-777130147/)
 
-[**Gandhar Ravindra Pansare**](gandharpansare@gmail.com)  [**(Linkedin)**](https://www.linkedin.com/in/gandharpansare/)
+**Gandhar Ravindra Pansare** (gandharpansare@gmail.com)  [**(Linkedin)**](https://www.linkedin.com/in/gandharpansare/)
 
 ---
