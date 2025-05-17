@@ -5,13 +5,13 @@ This Power BI dashboard was built using pharma sales data to uncover key sales i
 Six years data (2014-2019) on sales of drugs classified in 8 ATC categories
 ---
 
-## 📊 Dashboard Overview
+## Dashboard Overview
 
  ![Screenshot: Dashboard](./screenshots/Pharma_Sales_Dashboard.jpeg)
 
 The dashboard includes the following key performance indicators (KPIs) and visualizations:
 
-### ✅ KPIs Calculated:
+### KPIs Calculated:
 - **Highest Selling Drug**
 - **Total Sales**
 - **Peak Hour**
@@ -23,12 +23,12 @@ The dashboard includes the following key performance indicators (KPIs) and visua
 
 ---
 
-## ⚙️ Functionalities
+## Functionalities
 
 We have added interactions, year slicers, and a reset button built using the bookmark feature of Power BI.
 ---
 
-## 📈 Visualizations
+## Visualizations
 
 1. **Pie Chart** – Top Sales by Year  
    > ![Screenshot: Pie Chart](./screenshots/pie_chart_yearly_sales.jpeg)
@@ -44,7 +44,7 @@ We have added interactions, year slicers, and a reset button built using the boo
 
 ---
 
-## 🧮 KPI DAX Formulas
+## KPI DAX Formulas
 
 ### 1. **Highest Selling Drug**
 ```dax
@@ -163,7 +163,7 @@ CALCULATE(
 
 ---
 
-## 🧩 Power Query (M Code)
+## Power Query (M Code)
 
 > *(Add any Power Query logic here for transformations, date extraction, type conversions, and calculated columns like "IsWeekend" or "Hour")*
 
@@ -185,7 +185,7 @@ in
 
 ---
 
-## 🗂️ Folder Structure
+## Folder Structure
 
 ```
 pharma-sales-dashboard/
@@ -204,7 +204,7 @@ pharma-sales-dashboard/
 
 ---
 
-## 📬 Contact
+## Contact
 
 For questions or feedback, please contact 
 
